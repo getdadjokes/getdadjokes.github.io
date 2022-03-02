@@ -3,6 +3,24 @@ body {
 	font-family: helvetica, sans-serif;
 	color: #141414;
 	padding: 10px;
+	min-height: 300px;
+	min-width: 300px;
+}
+
+header {
+	color: #BEBEBE;
+}
+
+footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+	text-align: center;
+	color: #989898;
+}
+
+footer a {
+	text-decoration: none;
 }
 
 .center {
@@ -22,15 +40,11 @@ body {
 	min-width: 275px;
 }
 
-#title {
-	color: #BEBEBE;
-}
-
 #next {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	transition-duration: 0.2s;
+	transition-duration: 0.35s;
 	text-align: center;
 	font-size: 30px;
 	border: 3px solid #292929;
