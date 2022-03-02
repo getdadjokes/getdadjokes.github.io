@@ -1,1 +1,105 @@
-<h1>Hi!</h1>
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Dad Jokes</title>
+
+	<style>
+		body {
+			background-color: #141414;
+			font-family: helvetica, sans-serif;
+			color: #141414;
+			padding: 10px;
+		}
+
+		.center {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px
+		}
+
+		#joke {
+			text-align: center;
+			padding-left: 20px;
+			padding-right: 20px;
+			border-top: solid #292929;
+			border-bottom: solid #292929;
+			min-width: 275px;
+		}
+
+		#title {
+			color: #BEBEBE;
+		}
+
+		#next {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			transition-duration: 0.2s;
+			text-align: center;
+			font-size: 30px;
+			border: 3px solid #292929;
+			border-radius: 10px;
+			padding: 10px;
+			background-color: #141414;
+			color: #292929;
+		}
+
+		#next:hover {
+			color: #cccccc;
+			border: 3px solid #cccccc;,
+			cursor: pointer;
+		}
+		
+	</style>
+</head>
+<body>
+	<h1 id="title">Dad Jokes</h1>
+	<div class="center">
+		<h1 id="joke"></h1>
+		<button id="next" onclick="populateJoke()">Get Joke</button>
+	</div>
+	<script>
+		function sleep(ms) {
+		    return new Promise(resolve => setTimeout(resolve, ms));
+		}
+
+		
+		async function flash() {
+			// flash headers
+			const colors = ["#FF5C5C", "#5CFF5C", "#5C5CFF"];  // pallete: https://colorhunt.co/palette/0000005800ffe900ffffc600
+			const color_len = colors.length;
+			const joke = document.querySelector("div");  // holds joke text
+
+			while (true) {
+				for (let i = 0; i < color_len; i++) {
+					joke.style.color = colors[i];
+					await sleep(1500);
+				}
+			}
+		}
+
+		function populateJoke() {
+			// populate h1s with ids setup and punchline with their respective data from the dad jokes api
+			payload = {
+				headers: {
+					'Accept': 'application/json'
+				}
+			}
+
+			fetch('https://icanhazdadjoke.com', payload)
+				.then(response => response.json())
+				.then(data => {
+					document.querySelector("#joke").innerHTML = data.joke;
+				});
+		}
+
+		populateJoke();
+		flash();
+	</script>
+</body>
+</html>
