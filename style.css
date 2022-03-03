@@ -30,7 +30,7 @@ footer a {
 	transform: translate(-50%, -50%);
 }
 
-#announcement {
+.announcement {
 	position: absolute;
 	top: 0;
 	right: 0;
