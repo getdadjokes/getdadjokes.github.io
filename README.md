@@ -1,3 +1,3 @@
 # getdadjokes.github.io
 
-Credit to icanhazdadjoke.com for their incredible API.
+Credit to [icanhazdadjoke.com](https://icanhazdadjoke.com/api) for their incredible API.
