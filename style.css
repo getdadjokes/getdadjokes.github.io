@@ -28,13 +28,15 @@ footer a {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	padding: 20px
 }
 
 #joke {
 	text-align: center;
-	padding-left: 20px;
-	padding-right: 20px;
+	font-size: 45px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-top: 10px;
 	border-top: solid #292929;
 	border-bottom: solid #292929;
 	min-width: 275px;
@@ -45,17 +47,17 @@ footer a {
 	left: 50%;
 	transform: translateX(-50%);
 	transition-duration: 0.35s;
-	text-align: center;
-	font-size: 30px;
 	border: 3px solid #292929;
 	border-radius: 10px;
-	padding: 10px;
+	text-align: center;
+	font-size: 30px;
+	padding: 5px;
 	background-color: #141414;
 	color: #292929;
 }
 
 #next:hover {
 	color: #cccccc;
-	border: 3px solid #cccccc;,
+	border: 3px solid #cccccc;
 	cursor: pointer;
 }
