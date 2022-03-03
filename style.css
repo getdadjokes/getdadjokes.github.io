@@ -30,6 +30,17 @@ footer a {
 	transform: translate(-50%, -50%);
 }
 
+#announcement {
+	position: absolute;
+	top: 0;
+	right: 0;
+	max-width: 300px;
+	max-height: 300px;
+	border: 3px solid #292929;
+	text-align: center;
+	color: darkred;
+}
+
 #joke {
 	text-align: center;
 	font-size: 45px;
