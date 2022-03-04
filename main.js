@@ -3,15 +3,25 @@ function sleep(ms) {
 }
 
 
+//button functions
+$("#joke").click(function() {
+	populateJoke;
+});
+
+$(".announcement").click(function() {
+	$(".announcement").css("display", "none");
+})
+
+
 async function flash() {
 	// flash headers
 	const colors = ["#FF5C5C", "#5CFF5C", "#5C5CFF"];  // pallete: https://colorhunt.co/palette/0000005800ffe900ffffc600
 	const color_len = colors.length;
-	const joke = document.querySelector("#joke");  // holds joke text
+	const joke = $("#joke");  // holds joke text
 
 	while (true) {
 		for (let i = 0; i < color_len; i++) {
-			joke.style.color = colors[i];
+			joke.css('color', colors[i]);
 			await sleep(1500);  // synchronously stop for 1500 ms
 		}
 	}
@@ -29,9 +39,11 @@ function populateJoke() {
 	fetch('https://icanhazdadjoke.com', payload)
 		.then(response => response.json())
 		.then(data => {
-			document.querySelector("#joke").innerHTML = data.joke;  // set joke
+			$("#joke").html(data.joke);  // set joke
 		});
 }
 
-populateJoke();
-flash();
+$(document).ready(function() {
+	flash();
+	populateJoke();
+})
